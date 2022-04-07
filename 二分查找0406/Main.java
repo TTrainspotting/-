@@ -1,3 +1,6 @@
+704. 二分查找
+
+
 package 二分查找0406;
 //法一：左闭右闭区间
 //class Solution {
@@ -8,7 +11,7 @@ package 二分查找0406;
 //    	int left = 0;
 //    	int right = nums.length-1;
 //    	while(left<=right) {
-//    		int mid = left + ((right - left) >> 1);
+//    		int mid = left + ((right - left) >> 1);//// 防止溢出 等同于(left + right)/2
 //    		if(target<nums[mid]) {
 //    			right=mid-1;
 //    		}
@@ -27,7 +30,7 @@ package 二分查找0406;
 class Solution {
     public int search(int[] nums, int target) {
     	int left = 0;
-    	int right = nums.length;
+    	int right = nums.length;//注意没有-1
     	while(left<right) {
     		int mid = left + ((right - left) >> 1);
     		if(nums[mid]>target) {
